@@ -2,7 +2,7 @@
 
 function setUpTrigger() {
     ScriptApp.newTrigger('outcomeWikiGroup')
-        .forSpreadsheet('[GOOGLE SPREADSHEET ID]') // Add Google Spreadsheet ID here
+        .forSpreadsheet('[GOOGLE SPREADSHEET ID]') // EDIT HERE: Add Google Spreadsheet ID here
         .onFormSubmit()
         .create();
 }
@@ -20,7 +20,7 @@ function outcomeWikiGroup(e) {
         var email = e.range.offset(0, -1).getValue();
         var finalScore = parseInt(e.range.getValue());
         var addGroup = []
-    } finally { // Add Group ID Numbers here, based on tab names on the responses spreadsheet
+    } finally { // EDIT HERE: Add Group ID Numbers here, based on Tab Names on the responses spreadsheet
         if (parseInt(quiz_num) === 101) {
             addGroup = [53]
         } else if (parseInt(quiz_num) === 102) {
@@ -51,7 +51,7 @@ function outcomeWikiGroup(e) {
             addGroup = [66]
         }
         // Passed Quiz block below
-        if (finalScore >= 75) { // Here, pass is definined as >= 75. You can change as needed 
+        if (finalScore >= 75) { // EDIT HERE: Here, pass is definined as >= 75. You can change as needed 
             var data = {
                 'email': email,
                 'addGroups': addGroup,
@@ -63,13 +63,13 @@ function outcomeWikiGroup(e) {
                 'payload': JSON.stringify(data),
                 'muteHttpExceptions': true
             };
-            var response = UrlFetchApp.fetch('[WEBHOOK URL]', options); //Webhook is pinged, sending the user group additions/changes as needed  
+            var response = UrlFetchApp.fetch('[WEBHOOK URL]', options); //EDIT HERE: Webhook is pinged, sending the user group additions/changes as needed  
 
             var code = parseInt(response.getResponseCode());
 
             // The emails below can also be done with html templates if desired, instead of text in the app script. 
 
-            if (code === 200) { // If they passed the quiz, and no error, then htmlBody is sent to the emails. Edit emails and message here as necessary. 
+            if (code === 200) { //EDIT HERE: If they passed the quiz, and no error, then htmlBody is sent to the emails. Edit emails and message here as necessary. 
                 var opt = {
                     'bcc': 'keshavan@staclabs.io' + ',' + 'josh@kydemocrats.org' + ',' + 'brandon@kydemocrats.org',
                     'name': 'votebuilder@kydemocrats.org',
@@ -79,7 +79,7 @@ function outcomeWikiGroup(e) {
 
                 MailApp.sendEmail(email, `VAN ${quiz_num} Quiz Results`, opt.htmlBody, opt);
 
-            } else if (code === 404) { // If they passed the quiz, and a 404 error, then htmlBody is sent to the emails, but user groups are not changed. 
+            } else if (code === 404) { // EDIT HERE: If they passed the quiz, and a 404 error, then htmlBody is sent to the emails, but user groups are not changed. 
                 var opt = {
                     'bcc': 'keshavan@staclabs.io' + ',' + 'josh@kydemocrats.org' + ',' + 'brandon@kydemocrats.org',
                     'name': 'votebuilder@kydemocrats.org',
@@ -90,7 +90,7 @@ function outcomeWikiGroup(e) {
                 MailApp.sendEmail(email, `VAN ${quiz_num} Quiz Results`, opt.htmlBody, opt);
 
             } else {
-                var opt = { // If some other error, then you need to troubleshoot!
+                var opt = { //EDIT HERE: If some other error, then you need to troubleshoot!
                     'cc': 'keshavan@staclabs.io',
                     'name': 'votebuilder@kydemocrats.org',
                     'replyTo': 'votebuilder@kydemocrats.org',
@@ -113,11 +113,11 @@ function outcomeWikiGroup(e) {
                 'payload': JSON.stringify(data),
                 'muteHttpExceptions': true
             };
-            var response = UrlFetchApp.fetch('[WEBHOOK URL]', options);
+            var response = UrlFetchApp.fetch('[WEBHOOK URL]', options); // EDIT HERE
 
             var code = parseInt(response.getResponseCode());
 
-            if (code === 200) {
+            if (code === 200) { // EDIT HERE
                 var opt = {
                     'bcc': 'keshavan@staclabs.io' + ',' + 'josh@kydemocrats.org' + ',' + 'brandon@kydemocrats.org',
                     'name': 'votebuilder@kydemocrats.org',
@@ -127,7 +127,7 @@ function outcomeWikiGroup(e) {
 
                 MailApp.sendEmail(email, `VAN ${quiz_num} Quiz Results`, opt.htmlBody, opt);
 
-            } else if (code === 404) {
+            } else if (code === 404) { // EDIT HERE
                 var opt = {
                     //  'cc' : 'josh@kydemocrats.org',
                     'bcc': 'keshavan@staclabs.io' + ',' + 'josh@kydemocrats.org' + ',' + 'brandon@kydemocrats.org',
@@ -139,7 +139,7 @@ function outcomeWikiGroup(e) {
                 MailApp.sendEmail(email, `VAN ${quiz_num} Quiz Results`, opt.htmlBody, opt);
 
             } else {
-                var opt = {
+                var opt = { // EDIT HERE
                     'cc': 'keshavan@staclabs.io',
                     'name': 'votebuilder@kydemocrats.org',
                     'replyTo': 'votebuilder@kydemocrats.org',
