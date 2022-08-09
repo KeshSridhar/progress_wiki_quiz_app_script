@@ -20,7 +20,7 @@ function outcomeWikiGroup(e) {
         var email = e.range.offset(0, -1).getValue();
         var finalScore = parseInt(e.range.getValue());
         var addGroup = []
-    } finally { // Add Group Numbers here, based on tab name
+    } finally { // Add Group ID Numbers here, based on tab names on the responses spreadsheet
         if (parseInt(quiz_num) === 101) {
             addGroup = [53]
         } else if (parseInt(quiz_num) === 102) {
