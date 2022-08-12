@@ -71,9 +71,9 @@ function outcomeWikiGroup(e) {
 
             if (code === 200) { //EDIT HERE: If they passed the quiz, and no error, then htmlBody is sent to the emails. Edit emails and message here as necessary. 
                 var opt = {
-                    'bcc': 'keshavan@staclabs.io' + ',' + 'josh@kydemocrats.org' + ',' + 'brandon@kydemocrats.org',
-                    'name': 'votebuilder@kydemocrats.org',
-                    'replyTo': 'votebuilder@kydemocrats.org',
+                    'bcc': '[ADMIN 1 EMAIL]' + ',' + '[ADMIN 2 EMAIL]' + ',' + '[ADMIN 3 EMAIL]',
+                    'name': '[FROM EMAIL]',
+                    'replyTo': '[REPLY-TO EMAIL]',
                     'htmlBody': `With a score of ${finalScore} you passed the quiz! Please log out of and log back into your Progress Wiki account, and you should see the next part of the VAN coursework!<br> If you have any questions, please contact us at votebuilder@kydemocrats.org. Thank you for your effort!`
                 }
 
@@ -81,9 +81,9 @@ function outcomeWikiGroup(e) {
 
             } else if (code === 404) { // EDIT HERE: If they passed the quiz, and a 404 error, then htmlBody is sent to the emails, but user groups are not changed. 
                 var opt = {
-                    'bcc': 'keshavan@staclabs.io' + ',' + 'josh@kydemocrats.org' + ',' + 'brandon@kydemocrats.org',
-                    'name': 'votebuilder@kydemocrats.org',
-                    'replyTo': 'votebuilder@kydemocrats.org',
+                    'bcc': '[ADMIN 1 EMAIL]' + ',' + '[ADMIN 2 EMAIL]' + ',' + '[ADMIN 3 EMAIL]',
+                    'name': '[FROM EMAIL]',
+                    'replyTo': '[REPLY-TO EMAIL]',
                     'htmlBody': `With a score of ${finalScore} you passed the quiz. However, the email you used for the quiz did not match the email that you signed up with for your VAN coursework. Please resubmit the quiz using the correct email. If you have any questions, please contact us at votebuilder@kydemocrats.org.<br> Thank you for your effort!`
                 }
 
@@ -91,12 +91,12 @@ function outcomeWikiGroup(e) {
 
             } else {
                 var opt = { //EDIT HERE: If some other error, then you need to troubleshoot!
-                    'cc': 'keshavan@staclabs.io',
-                    'name': 'votebuilder@kydemocrats.org',
-                    'replyTo': 'votebuilder@kydemocrats.org',
+                    'cc': '[ADMIN OPTIONAL EMAIL]',
+                    'name': '[FROM EMAIL]',
+                    'replyTo': '[REPLY-TO EMAIL]',
                     'htmlBody': `With a score of ${finalScore}, ${email} passed the quiz. Something went really wrong though, so please troubleshoot.`
                 }
-                MailApp.sendEmail('josh@kydemocrats.org' + ',' + 'brandon@kydemocrats.org', `VAN ${quiz_num} Quiz Error`, opt.htmlBody, opt);
+                MailApp.sendEmail('[ADMIN 1 EMAIL]' + ',' + '[ADMIN 2 EMAIL]', `VAN ${quiz_num} Quiz Error`, opt.htmlBody, opt);
 
             }
 
@@ -119,9 +119,9 @@ function outcomeWikiGroup(e) {
 
             if (code === 200) { // EDIT HERE
                 var opt = {
-                    'bcc': 'keshavan@staclabs.io' + ',' + 'josh@kydemocrats.org' + ',' + 'brandon@kydemocrats.org',
-                    'name': 'votebuilder@kydemocrats.org',
-                    'replyTo': 'votebuilder@kydemocrats.org',
+                    'bcc': '[ADMIN 1 EMAIL]' + ',' + '[ADMIN 2 EMAIL]' + ',' + '[ADMIN 3 EMAIL]',
+                    'name': '[FROM EMAIL]',
+                    'replyTo': '[REPLY-TO EMAIL]',
                     'htmlBody': `With a score of ${finalScore} you did not pass the quiz. You need a minimum of 75 points to     pass. If you are waiting for free response answers to be graded,<br> then your score may increase; please wait for those grades to be submitted. Otherwise, please review the training, and take the quiz again. If you have <br> any questions, please contact us at votebuilder@kydemocrats.org. Thank you for your effort!`
                 }
 
@@ -129,10 +129,9 @@ function outcomeWikiGroup(e) {
 
             } else if (code === 404) { // EDIT HERE
                 var opt = {
-                    //  'cc' : 'josh@kydemocrats.org',
-                    'bcc': 'keshavan@staclabs.io' + ',' + 'josh@kydemocrats.org' + ',' + 'brandon@kydemocrats.org',
-                    'name': 'votebuilder@kydemocrats.org',
-                    'replyTo': 'votebuilder@kydemocrats.org',
+                    'bcc': '[ADMIN 1 EMAIL]' + ',' + '[ADMIN 2 EMAIL]' + ',' + '[ADMIN 3 EMAIL]',
+                    'name': '[FROM EMAIL]',
+                    'replyTo': '[REPLY-TO EMAIL]',
                     'htmlBody': `With a score of ${finalScore} you did not pass the quiz. You need a minimum of 75 points to pass. Please note that the email you used did not match the email that you signed up with for your VAN coursework.<br> Please resubmit the quiz using the correct email. If you have any questions, please contact us at votebuilder@kydemocrats.org.<br> Thank you for your effort!`
                 }
 
@@ -140,12 +139,12 @@ function outcomeWikiGroup(e) {
 
             } else {
                 var opt = { // EDIT HERE
-                    'cc': 'keshavan@staclabs.io',
-                    'name': 'votebuilder@kydemocrats.org',
-                    'replyTo': 'votebuilder@kydemocrats.org',
+                    'cc': '[ADMIN OPTIONAL EMAIL]',
+                    'name': '[FROM EMAIL]',
+                    'replyTo': '[REPLY-TO EMAIL]',
                     'htmlBody': `With a score of ${finalScore}, ${email} did not pass the quiz. Something went really wrong though, so please troubleshoot.`
                 }
-                MailApp.sendEmail('josh@kydemocrats.org' + ',' + 'brandon@kydemocrats.org', `VAN ${quiz_num} Quiz Error`, opt.htmlBody, opt);
+                MailApp.sendEmail('[ADMIN 1 EMAIL]' + ',' + '[ADMIN 2 EMAIL]', `VAN ${quiz_num} Quiz Error`, opt.htmlBody, opt);
 
             }
 
