@@ -20,35 +20,35 @@ function outcomeWikiGroup(e) {
         var email = e.range.offset(0, -1).getValue();
         var finalScore = parseInt(e.range.getValue());
         var addGroup = []
-    } finally { // EDIT HERE: Add Group ID Numbers here, based on Tab Names on the responses spreadsheet
-        if (parseInt(quiz_num) === 101) {
-            addGroup = [53]
-        } else if (parseInt(quiz_num) === 102) {
-            addGroup = [54]
-        } else if (parseInt(quiz_num) === 103) {
-            addGroup = [55]
-        } else if (parseInt(quiz_num) === 104) {
-            addGroup = [56]
-        } else if (parseInt(quiz_num) === 105) {
-            addGroup = [57]
-        } else if (parseInt(quiz_num) === 106) {
-            addGroup = [58]
-        } else if (parseInt(quiz_num) === 107) {
-            addGroup = [59]
-        } else if (parseInt(quiz_num) === 108) {
-            addGroup = [60]
-        } else if (parseInt(quiz_num) === 109) {
-            addGroup = [61]
-        } else if (parseInt(quiz_num) === 201) {
-            addGroup = [62]
-        } else if (parseInt(quiz_num) === 202) {
-            addGroup = [63]
-        } else if (parseInt(quiz_num) === 203) {
-            addGroup = [64]
-        } else if (parseInt(quiz_num) === 204) {
-            addGroup = [65]
-        } else if (parseInt(quiz_num) === 205) {
-            addGroup = [66]
+    } finally { // EDIT HERE: Add Wiki UserGroup ID Numbers here, based on Tab Names on the responses spreadsheet. 
+        if (parseInt(quiz_num) === [SPREADSHEET TAB NAME]) {
+            addGroup = [USER GROUP ID]
+        } else if (parseInt(quiz_num) === [SPREADSHEET TAB NAME]) {
+            addGroup = [USER GROUP ID]
+        } else if (parseInt(quiz_num) === [SPREADSHEET TAB NAME]) {
+            addGroup = [USER GROUP ID]
+        } else if (parseInt(quiz_num) === [SPREADSHEET TAB NAME]) {
+            addGroup = [USER GROUP ID]
+        } else if (parseInt(quiz_num) === [SPREADSHEET TAB NAME]) {
+            addGroup = [USER GROUP ID]
+        } else if (parseInt(quiz_num) === [SPREADSHEET TAB NAME]) {
+            addGroup = [USER GROUP ID]
+        } else if (parseInt(quiz_num) === [SPREADSHEET TAB NAME]) {
+            addGroup = [USER GROUP ID]
+        } else if (parseInt(quiz_num) === [SPREADSHEET TAB NAME]) {
+            addGroup = [USER GROUP ID]
+        } else if (parseInt(quiz_num) === [SPREADSHEET TAB NAME]) {
+            addGroup = [USER GROUP ID]
+        } else if (parseInt(quiz_num) === [SPREADSHEET TAB NAME]) {
+            addGroup = [USER GROUP ID]
+        } else if (parseInt(quiz_num) === [SPREADSHEET TAB NAME]) {
+            addGroup = [USER GROUP ID]
+        } else if (parseInt(quiz_num) === [SPREADSHEET TAB NAME]) {
+            addGroup = [USER GROUP ID]
+        } else if (parseInt(quiz_num) === [SPREADSHEET TAB NAME]) {
+            addGroup = [USER GROUP ID]
+        } else if (parseInt(quiz_num) === [SPREADSHEET TAB NAME]) {
+            addGroup = [USER GROUP ID]
         }
         // Passed Quiz block below
         if (finalScore >= 75) { // EDIT HERE: Here, pass is definined as >= 75. You can change as needed 
